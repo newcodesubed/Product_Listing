@@ -17,8 +17,9 @@ export default function ProductCard({ product }) {
         <div className="text-gray-500 text-sm capitalize">{product?.category}</div>
 
         <div className="flex gap-2 text-sm items-center">
-          <div className="font-bold">${product?.discountPercentage}</div>
+          <div className="font-bold">${(product?.price * (1 - product?.discountPercentage / 100)).toFixed(2)}</div>
           <div className="line-through text-gray-400">${product?.price}</div>
+          <div className="text-green-600 text-xs">-{product?.discountPercentage}%</div>
         </div>
 
         <span className="bg-yellow-400 px-2 py-0.5 text-xs w-fit rounded">
