@@ -1,6 +1,7 @@
 import React from 'react'
-import { useSearch } from '../context/SearchContext'
+
 import ProductCard from '../components/productCard'
+import { useSearch } from '../context/useSearchContext';
 
 export default function Search() {
     const { searchResults, isSearching, searchQuery } = useSearch();

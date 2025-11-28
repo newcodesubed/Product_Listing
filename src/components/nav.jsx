@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
-import { useSearch } from '../context/SearchContext'
+
 import { useNavigate, useLocation } from 'react-router'
+import { useSearch } from '../context/useSearchContext';
 
 export default function Nav() {
     const { searchProducts, clearSearch, setSearchQuery, isSearching } = useSearch();

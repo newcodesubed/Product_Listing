@@ -1,14 +1,5 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
-
-const SearchContext = createContext();
-
-export const useSearch = () => {
-  const context = useContext(SearchContext);
-  if (!context) {
-    throw new Error('useSearch must be used within a SearchProvider');
-  }
-  return context;
-};
+import { useState, useCallback } from 'react';
+import { SearchContext } from './useSearchContext';
 
 export const SearchProvider = ({ children }) => {
   const [searchResults, setSearchResults] = useState([]);
