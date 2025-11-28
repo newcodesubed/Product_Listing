@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-
 import { useNavigate, useLocation } from 'react-router'
 import { useSearch } from '../context/useSearchContext';
 
@@ -13,23 +12,19 @@ export default function Nav() {
     const handleInputChange = (e) => {
         const value = e.target.value;
         setInputValue(value);
-        
-        // Clear existing timeout
+
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
         }
-        
-        // Set new timeout
+
         timeoutRef.current = setTimeout(() => {
             if (value.trim()) {
                 searchProducts(value);
                 setSearchQuery(value);
-                // Navigate to search page if not already there
                 if (location.pathname !== '/search') {
                     navigate('/search');
                 }
             } else if (value === '' && location.pathname === '/search') {
-                // Only clear and navigate back if we're on search page and search is empty
                 clearSearch();
                 navigate('/');
             }
@@ -37,7 +32,6 @@ export default function Nav() {
     };
     
     const handleClearSearch = () => {
-        // Clear timeout if exists
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
         }

@@ -4,14 +4,28 @@ import ProductCard from '../components/productCard'
 import { useSearch } from '../context/useSearchContext';
 
 export default function Search() {
-    const { searchResults, isSearching, searchQuery } = useSearch();
+    const { searchResults, isSearching, searchQuery, selectedCategory, categories } = useSearch();
+
+    const getCategoryDisplayName = () => {
+        if (!selectedCategory) return null;
+        const category = categories.find(cat => cat.slug === selectedCategory);
+        return category ? category.name : selectedCategory;
+    };
+
+    const categoryName = getCategoryDisplayName();
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen">
             <div className="container mx-auto px-4 py-6">
                 <div className="mb-6">
                     <h1 className="text-2xl font-bold text-gray-800">
-                        Search Results {searchQuery && `for "${searchQuery}"`}
+                        {categoryName ? (
+                            `${categoryName} Products`
+                        ) : searchQuery ? (
+                            `Search Results for "${searchQuery}"`
+                        ) : (
+                            'Search Results'
+                        )}
                     </h1>
                     {!isSearching && searchResults.length > 0 && (
                         <p className="text-gray-600 mt-2">
