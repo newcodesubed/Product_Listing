@@ -42,7 +42,7 @@ export default function Search() {
 
     return (
         <div className="min-h-screen">
-            <div className="container mx-auto px-4 py-6">
+            <div className="container mx-auto px-4 md:px-6 py-6">
                 <div className="mb-6">
                     <h1 className="text-2xl font-bold text-gray-800">
                         {categoryName ? (

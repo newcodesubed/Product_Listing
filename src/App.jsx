@@ -11,9 +11,9 @@ export default function App() {
     <SearchProvider>
       <div className="min-h-screen bg-gray-50">
         <Nav />
-        <div className="flex">
+        <div className="relative flex">
           <CategorySidebar />
-          <main className="flex-1">
+          <main className="flex-1 min-w-0 md:ml-0">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/search" element={<Search />} />

@@ -68,12 +68,12 @@ export default function ProductList() {
   }, [loading, loadingMore, hasMore, fetchProducts]);
 
   return (
-    <div className="px-4 py-6">
+    <div className="px-4 md:px-6 py-6 w-full">
       
       {!loading && !error && products.length > 0 && (
         <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-800">All Products</h2>
-          <p className="text-gray-600 mt-2">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-800">All Products</h2>
+          <p className="text-gray-600 mt-2 text-sm md:text-base">
             Showing {products.length} of {total} products
           </p>
         </div>

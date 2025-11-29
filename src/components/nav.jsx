@@ -45,9 +45,9 @@ export default function Nav() {
     
     return (
         <div>
-            <nav className="flex items-center justify-between p-4 bg-white shadow-sm border-b">
-                <h2 className="text-xl font-bold text-gray-800 cursor-pointer" onClick={() => navigate('/')}>Product Listing</h2>
-                <div className="relative flex items-center max-w-md w-full">
+            <nav className="flex items-center justify-between p-4 bg-white shadow-sm border-b relative z-30">
+                <h2 className="text-lg md:text-xl font-bold text-gray-800 cursor-pointer" onClick={() => navigate('/')}>Product Listing</h2>
+                <div className="relative flex items-center max-w-xs md:max-w-md w-full ml-4">
                     <input 
                         type="text" 
                         value={inputValue} 
